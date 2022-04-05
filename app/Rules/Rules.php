@@ -78,7 +78,7 @@ class Rules implements RulesInterface, CnpValidationinterface
 
         $result = ($result % 11);
 
-        if (($result % 11) == 10) {
+        if ($result == 10) {
             $result = 1;
         }
 
