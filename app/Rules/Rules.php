@@ -1,6 +1,7 @@
 <?php
 namespace App\Rules;
 
+use App\Rules\RulesInterface;
 use App\Rules\CnpValidationinterface;
 
 class Rules implements RulesInterface, CnpValidationinterface
