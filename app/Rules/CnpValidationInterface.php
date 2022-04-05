@@ -2,7 +2,7 @@
 
 namespace App\Rules;
 
-interface CnpValidationinterface
+interface CnpValidationInterface
 {
     public function month(int $month): bool;
 

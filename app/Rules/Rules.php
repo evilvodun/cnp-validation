@@ -2,9 +2,9 @@
 namespace App\Rules;
 
 use App\Rules\RulesInterface;
-use App\Rules\CnpValidationinterface;
+use App\Rules\CnpValidationInterface;
 
-class Rules implements RulesInterface, CnpValidationinterface
+class Rules implements RulesInterface, CnpValidationInterface
 {
     protected int $minMonth = 1;
     protected int $maxMonth = 12;
