@@ -102,7 +102,7 @@ class Gender implements RulesInterface
 
         $year = $this->{$control}[$gender] + $this->year($cnp);
 
-        return ($year > $this->minYear && $year < $this->maxYear);
+        return ($year >= $this->minYear && $year <= $this->maxYear);
     }
     
 }
