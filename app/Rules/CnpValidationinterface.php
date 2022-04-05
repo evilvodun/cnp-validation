@@ -12,5 +12,5 @@ interface CnpValidationinterface
 
     public function orderNumber(int $orderNumber): bool;
 
-    public function controlNumber(array $cnp, int $controlNumber);
+    public function controlNumber(array $cnp, int $controlNumber): bool;
 }

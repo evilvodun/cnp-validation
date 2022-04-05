@@ -55,7 +55,7 @@ class Rules implements RulesInterface, CnpValidationinterface
         return ($orderNumber > 0);
     }
 
-    public function controlNumber(array $cnp, int $controlNumber)
+    public function controlNumber(array $cnp, int $controlNumber): bool
     {
 
         $result = 0;
