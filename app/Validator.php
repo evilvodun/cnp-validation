@@ -19,14 +19,10 @@ class Validator
 
     public function isCnpValid(string $cnp): bool
     {
-        if (!$this->isNumeric($cnp)) {
+        if (!$this->isNumeric($cnp) || !$this->isValidLength($cnp)) {
             return false;
         }
-
-        if (!$this->isValidLength($cnp)) {
-            return false;
-        }
-
+        
         if (!$this->gender->validate($this->convert($cnp))) {
             return false;
         }

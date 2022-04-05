@@ -20,23 +20,11 @@ class Rules implements RulesInterface, CnpValidationinterface
     {
         list($year, $month, $day, $location, $orderNumber, $controlNumber) = $this->split($cnp);
 
-        if (!$this->day($day)) {
+        if (!$this->day($day) || !$this->month($month) || !$this->location($location)) {
             return false;
         }
 
-        if (!$this->month($month)) {
-            return false;
-        }
-
-        if (!$this->location($location)) {
-            return false;
-        }
-
-        if (!$this->orderNumber($orderNumber)) {
-            return false;
-        }
-
-        if (!$this->controlNumber($cnp, $controlNumber)) {
+        if (!$this->orderNumber($orderNumber) || !$this->controlNumber($cnp, $controlNumber)) {
             return false;
         }
 
