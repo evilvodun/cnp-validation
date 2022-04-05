@@ -1,7 +1,9 @@
 <?php
 namespace App\Rules;
 
-class Gender
+use App\Rules\RulesInterface;
+
+class Gender implements RulesInterface
 {
     protected int $min = 1;
 

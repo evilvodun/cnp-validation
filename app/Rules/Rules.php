@@ -1,7 +1,9 @@
 <?php
 namespace App\Rules;
 
-class Rules implements RulesInterface
+use App\Rules\CnpValidationinterface;
+
+class Rules implements RulesInterface, CnpValidationinterface
 {
     protected int $minMonth = 1;
     protected int $maxMonth = 12;
