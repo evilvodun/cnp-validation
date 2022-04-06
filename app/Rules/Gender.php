@@ -76,7 +76,7 @@ class Gender implements RulesInterface
 
         $year = $this->genericYear + $this->year($cnp);
 
-        return ($year > $this->minYear && $year < $this->maxYear);
+        return ($year >= $this->minYear && $year <= $this->maxYear);
     }
 
     protected function split(array $cnp)
