@@ -13,7 +13,8 @@ class Rules implements RulesInterface, CnpValidationInterface
     protected int $maxDay = 31;
 
     protected int $minLocation = 1;
-    protected int $maxLocation = 52;
+    protected int $maxLocation = 46;
+    protected array $bucLocation = [51, 52];
 
     protected array $control = [2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9];
 
@@ -48,7 +49,7 @@ class Rules implements RulesInterface, CnpValidationInterface
 
     public function location(int $location): bool
     {
-        return ($location >= $this->minLocation && $location <= $this->maxLocation);
+        return (($location >= $this->minLocation && $location <= $this->maxLocation) || ($location >= $bucLocation[0] && $location <= $bucLocation[1]));
     }
 
     public function orderNumber(int $orderNumber): bool
