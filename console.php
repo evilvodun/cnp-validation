@@ -3,11 +3,11 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use App\Validator;
-use App\Rules\Rules;
+use App\Rules\Rules
 use App\Rules\Gender;
 
 if (empty($argv[1])) {
-    echo "Trebuie sa scrii un cnp\n";
+    echo "Trebuie sa scrii un cnp\n"
     exit();
 }
 
@@ -25,4 +25,4 @@ if ($valid) {
     exit();
 }
 
-echo "CNP Invalid\n";
+echo "CNP Invalid\n"
