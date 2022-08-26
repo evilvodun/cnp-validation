@@ -1,17 +1,23 @@
 name: Build
 on:
-  push:
-    branches:
-      - main # or the name of your main branch
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 jobs:
-  build:
-    name: Build
+  sonar-scanner:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Code Checkout
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: sonarsource/sonarqube-scan-action@master
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        with:
+          args: >
+            -Dsonar.projectKey=${{ env.SONAR_PROJECT }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
