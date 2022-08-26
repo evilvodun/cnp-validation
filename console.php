@@ -7,7 +7,7 @@ use App\Rules\Rules;
 use App\Rules\Gender;
 
 if (empty($argv[1])) {
-    echo "Trebuie sa scrii un cnp";
+    echo "Trebuie sa scrii un cnp\n";
     exit();
 }
 
